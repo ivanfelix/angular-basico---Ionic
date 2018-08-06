@@ -16,15 +16,16 @@ export class PendientesPage {
         private navCtrl: NavController,
         private alertCtrl: AlertController
     ){
-
     }
-
     listaSeleccionada(lista: Lista){
         console.log(lista);
+        this.navCtrl.push(AgregarPage, {
+            titulo: lista.titulo,
+            lista: lista
+        });
     }
     agregarLista(){
         //this.navCtrl.push(AgregarPage);
-
         const alerta = this.alertCtrl.create({
             title: 'Nueva lista',
             message: 'Nombre de la nueva lista que desea',
@@ -53,5 +54,7 @@ export class PendientesPage {
         });
         alerta.present();
     }
-
+    borrarLista(lista){
+        this.deseosService.eliminarLista(lista);
+    }
 }
