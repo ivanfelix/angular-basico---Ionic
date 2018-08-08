@@ -13,13 +13,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { DeseosProvider } from '../providers/deseos/deseos';
 import { AgregarPage } from '../pages/agregar/agregar';
 
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
+import { ListasComponent } from '../components/listas.component';
+
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
     PendientesPage,
     TerminadosPage,
-    AgregarPage
+    AgregarPage,
+    FiltroCompletadoPipe,
+    ListasComponent
   ],
   imports: [
     BrowserModule,
